@@ -1,0 +1,14 @@
+# Neovim cache & runtime junk
+/.cache/
+/shada/
+/undo/
+/swap/
+/backup/
+
+# Plugin managers
+/lazy/
+/packer_compiled.lua
+
+# OS/editor junk
+.DS_Store
+*.swp
