@@ -1,28 +1,62 @@
 return {
-    {
-        'goolord/alpha-nvim',
-        config = function()
-            local alpha = require("alpha")
-            local dashboard = require("alpha.themes.dashboard")
-            local ascii = require("ascii")
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			local alpha = require("alpha")
+			local dashboard = require("alpha.themes.dashboard")
+			local ascii = require("ascii")
 
-            -- Header
-            dashboard.section.header.val = ascii.art.text.neovim.sharp
+			-- Header
+			dashboard.section.header.val = ascii.art.text.neovim.sharp
+			--rico
+			-- dashboard.section.header.val = {
 
+				-- "██▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓██",
+				-- "▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓",
+				-- "▒▒░▒▒░▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░▒░░░░░▒░▒░▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░▒░░░░░▒░░▒▒░░▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░▒░░▒▒▒▒▒░░░░░░░▒▒▒▒▒▓▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▓▓▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░▒▒░░░░░░░░░░▒▒▒▒▒▓▓▓▓▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░▒▒░░░░░░░░░▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░▒░░░░░░░░░░▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓█▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░▒░░░░░░░░░░▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░▒░░░░░░░░░▒▒▒▓▓▓▒▓▓▓▓▓▓▓▓▓██▒▒▒░▒░▒▒▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▒▒▓▓██████▓▓▓█▓▒▒▒░▒▒▒░▒▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░░░░░░░▒▒▓█▓▓▓░▒▓▓███▓▓█▓█▓█▓▒░░▒░░▒▒░▒▒▒▒▒▒▒▒",
+				-- "░░░░░░░░░░░░░░░░░░░░▓░▒██▓▓▒░▒▓▓████████▓▓▓▒░░░░░░░░▒░▒▒▒▒▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒░░▒▓▓▓██▓▓▓▓▓▓▓▒░░░░░░▒░░░▒░▒░▒▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░▒▒▒▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░▒░░░▒░▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░▒▒▒░▒▒▓▓▓██▓▓▓▓▓▓▓▓░░░░░░░░░░░░░▒░░▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░▒▒▒░░▒▓███▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓▒▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░▒░░░▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▒▒▓▓▓████▓▓▓▓▓▓░░░░░░░░░░░░░░▒░░▒░",
+				-- "░░░░░░░░░░░░░░░░░░░░░░▒▒░░▒▒▓▓▓██▓██▓▓▓▓▒░░░░░░░░░░░░░░▒░░░░",
+				-- "░░░░░░░░░░░░███░░░░░░░▒▒▒▒▒▒▒▒▓█▓██▓██████░░░░░░░░░░░░░░░▒▒░",
+				-- "░░░▓███████████████░░▒▒░░░░▒▒▒▒▓▓▓▓█████████████░░░░░░░░░░▒░",
+				-- "▓██████████████████░░▒▒▒░░░░▒▒▓▓▓▓▓▓█████████████████░░▒░░░░",
+				-- "███████████████████░░░░▒░░░░▒▒▓▓▓▓██████▓██████████████████▒",
+				-- "████████████████████░░░░▒▒░▒▒▒▓▓▓███████▓███████████████████",
+				-- "▓████████████████████░░▒▒▒▒▒▒▓▓████▓█▓▓▓▓███████████████████",
+				-- "███████████████████████▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████",
+				-- "▓█████████████████████████▒▒▒▒▒▒▓▓▓▓▓▓▓████████████████████▓",
+				-- "█▓████████████████████████████████████████████████████████▓█",
+			-- }
 
-            -- Buttons
-            dashboard.section.buttons.val = {
-                dashboard.button("e", "  New file", ":enew<CR>"),
-                dashboard.button("SPC f f", "  Find file", ":Telescope find_files<CR>"),
-                dashboard.button("SPC o f", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
-                dashboard.button("SPC f g", "  Find word", ":Telescope live_grep<CR>"),
-                dashboard.button("SPC b l", "  Jump to bookmarks", "<cmd>BookmarksLists<cr>"),
-                dashboard.button("SPC s l", "  Open last session", ":SessionManager load_last_session<CR>"),
-            }
+			-- Buttons
+			dashboard.section.buttons.val = {
+				dashboard.button("e", "  New file", ":enew<CR>"),
+				dashboard.button("SPC f f", "  Find file", ":Telescope find_files<CR>"),
+				dashboard.button("SPC o f", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
+				dashboard.button("SPC f g", "  Find word", ":Telescope live_grep<CR>"),
+				dashboard.button("SPC b l", "  Jump to bookmarks", "<cmd>BookmarksLists<cr>"),
+				dashboard.button("SPC s l", "  Open last session", ":SessionManager load_last_session<CR>"),
+			}
 
-
-            -- Layout
-            alpha.setup(dashboard.opts)
-        end
-    }
+			-- Layout
+			alpha.setup(dashboard.opts)
+		end,
+	},
 }
