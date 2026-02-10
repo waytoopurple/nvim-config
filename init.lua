@@ -1,5 +1,18 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  vim.g.sqlite_clib_path = "C:\\sqlite3\\sqlite3.dll"
+end
+
+vim.o.termguicolors = true
+
+require("config.keymaps")
+require("plugins.treesitter")
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'javascript', 'typescript', 'python', 'json' },
+  callback = function() vim.treesitter.start() end,
+})
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -7,7 +20,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -25,8 +38,7 @@ require("lazy").setup({
 })
 
 
-require("config.keymaps")
-require("plugins.treesitter")
+
 
 
 vim.lsp.handlers["textDocument/hover"] =

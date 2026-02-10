@@ -10,8 +10,8 @@ return {
                 --}
             --},
             options = {
-                cons_enabled = true,
-                theme = 'everforest'
+                icons_enabled = true,
+                theme = require("fieldlights.lualine")
             }
         })
     end

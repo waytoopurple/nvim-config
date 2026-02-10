@@ -30,12 +30,8 @@ return {
 					"prettier",
 					"eslint_d",
 					"stylua",
-					"black",
-					"isort",
 					"stylua",
 					"shfmt",
-					"flake8",
-					"ast_grep",
 					"ruff",
 					-- add more Mason tool names here
 				},
@@ -47,7 +43,7 @@ return {
 		end,
 	},
 	{
-		"whynothugo/lsp_lines.nvim",
+		"ErichDonGubler/lsp_lines.nvim",
 		config = function()
 			require("lsp_lines").setup()
 			vim.diagnostic.config({ virtual_text = false })

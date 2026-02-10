@@ -7,3 +7,4 @@ vim.cmd("set shiftwidth=4")
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.number = true
+vim.g.syntax_on = false
