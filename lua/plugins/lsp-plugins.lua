@@ -30,10 +30,8 @@ return {
 					"prettier",
 					"eslint_d",
 					"stylua",
-					"stylua",
-					"shfmt",
+                    "shfmt",
 					"ruff",
-					-- add more Mason tool names here
 				},
 				handlers = {},
 				automatic_installation = true,
